@@ -1,0 +1,25 @@
+# from https://github.com/mnabila/dotfiles/blob/master/polybar/.config/polybar/config.ini
+# I just change little bit
+DMENU="rofi -dmenu -i -p Fav -columns 2" 
+OPTIONS='''
+[
+  { "label": "Screnshot", "command":"screenshot"},
+  { "label": "Music Player", "command":"mpdevil"},
+  { "label": "Anki", "command":"anki"},
+  { "label": "File Manager", "command":"pcmanfm"},
+  { "label": "Esmart BNI", "command":"bimoskuy"},
+  { "label": "Browser", "command": "chromium" },
+  { "label": "Chat", "command": "Telegram" },
+  { "label": "Password Manager", "command":"keepassxc"},
+  { "label": "PyCharm", "command" : "PyCharm"},
+  { "label": "Office", "command": "libreoffice"},
+  { "label": "PDF Reader", "command": "evince"},
+  { "label": "Inkscape", "command": "inkscape"},
+  { "label": "GIMP", "command": "gimp"},
+  { "label": "Left mos mode", "command": "left_mos.sh"},
+  { "label": "Right mos mode", "command": "right_mos.sh"},
+  { "label": "Virtual Manager", "command" : "virt-manager"}
+]
+'''
+label=$(echo $OPTIONS | jq -r ".[].label" | $DMENU)
+exec $(echo $OPTIONS | jq -r ".[] | select(.label == \"$label\") | .command")
