@@ -1,4 +1,4 @@
-# dotfiles
+#dotfiles
 My current dotfiles
 
 ## Dependency 
@@ -18,6 +18,11 @@ My current dotfiles
 - rofi
 - Plug vim addons
 - Arc-Dark gtk theme
+
+# Notes
+- BTW, You can modify program in launcher .bin/fav\_program 
+- You need for add ~/.anime\_dump folder or change .xinitrc
+
 ## Images
 
 ![](https://i.ibb.co/XVQNsHk/Screenshot-20210209-152345.png)
